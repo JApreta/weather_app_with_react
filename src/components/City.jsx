@@ -10,8 +10,7 @@ export function City() {
       <div className="col-6 mt-3">
         <div className="clearfix weather-temperature">
           <img
-            id="main_img"
-            className="img-fluid float-left"
+            id="main_img"  className="img-fluid float-left"
             src="01d.svg"
             alt="clear"
           />
