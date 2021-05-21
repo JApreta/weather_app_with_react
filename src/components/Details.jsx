@@ -1,11 +1,11 @@
 import React from "react";
 
-export function Details() {
+export function Details(props) {
   return (
     <div className="col-4 details">
-      <span id="wind">Wind Speed: 4km/hr</span>
+      <span id="wind">Wind Speed: { props.windSpeed}km/hr</span>
       <br />
-      <span id="humidity">Humidity: 67%</span>
+      <span id="humidity">Humidity: { props.HumidityVal}%</span>
     </div>
   );
 }
