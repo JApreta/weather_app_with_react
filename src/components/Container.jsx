@@ -15,6 +15,7 @@ export function Container(props) {
   const [wind, setWind] = useState(null);
   const [icon, setIcon] = useState("");
   const [temperature, setTemperature] = useState(null);
+  const [coordinates,setCoordinates]= useState({})
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&appid=3a2f76834c807537970303e3dab30fe7&units=metric`;
   
   function showTemperature(response) {
@@ -25,6 +26,7 @@ export function Container(props) {
     setCityName(response.data.name);
     setIcon(`${response.data.weather[0].icon}.svg` );
     setReady(true);
+    setCoordinates(response.data.coord);
   }
   
   function searchCity() {
@@ -102,7 +104,7 @@ function showCurrentLocationLiveData() {
               </div>
             </div>
           </div>
-          <Forecast />
+          <Forecast coordinates={ coordinates}/>
           <Footer />
         </div>
       </div>
